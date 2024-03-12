@@ -30,4 +30,5 @@ public class SprintTestData {
     public static SprintTo getUpdatedTo() {
         return new SprintTo(SPRINT1_ID, "SP-1.001 updated", "active", PROJECT1_ID);
     }
+
 }

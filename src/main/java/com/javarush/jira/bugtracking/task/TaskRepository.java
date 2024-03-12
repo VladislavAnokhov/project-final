@@ -1,8 +1,10 @@
 package com.javarush.jira.bugtracking.task;
 
+import com.javarush.jira.bugtracking.task.Task;
 import com.javarush.jira.common.BaseRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -37,4 +39,8 @@ public interface TaskRepository extends BaseRepository<Task> {
             WHERE id IN (SELECT child FROM task_with_subtasks)
             """, nativeQuery = true)
     void setTaskAndSubTasksSprint(long taskId, Long sprintId);
+
+    @Query("SELECT t FROM Task t JOIN t.tags tag WHERE tag = :tag")
+    List<Task> findAllByTag(@Param("tag") String tag);
+
 }

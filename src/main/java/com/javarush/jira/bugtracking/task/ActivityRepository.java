@@ -1,5 +1,6 @@
 package com.javarush.jira.bugtracking.task;
 
+import com.javarush.jira.bugtracking.task.Activity;
 import com.javarush.jira.common.BaseRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;

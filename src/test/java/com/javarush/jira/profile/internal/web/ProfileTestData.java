@@ -32,7 +32,7 @@ public class ProfileTestData {
         Profile profile = new Profile();
         profile.setId(id);
         profile.setMailNotifications(14);
-        profile.setContacts(Set.of(new Contact(id, "tg", "guestTg")));
+      //  profile.setContacts(Set.of(new Contact(id, "tg", "guestTg")));
         return profile;
     }
 
